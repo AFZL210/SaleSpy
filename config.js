@@ -1,10 +1,21 @@
-export const AMAZON_URL = '';
-export const FLIPKART_URL = '';
-export const DESIRED_PRICE = 10000;
-export const CHECK_INTERVAL = 100000;
+const AMAZON_URL = '';
+const FLIPKART_URL = '';
+const DESIRED_PRICE = 1000000;
+const CHECK_INTERVAL = 2000;
 
-export const CHECK_FOR = "AMAZON/FLIPKART";
+const CHECK_FOR = "AMAZON/FLIPKART";
 
-export const EMAIL = "xyz@abc.com";
-export const COUNTRY_CODE = "+91";
-export const PHONE_NUMBER = "98xxxxxxxx";
+const EMAIL = "xyz@abc.com";
+const COUNTRY_CODE = "+91";
+const PHONE_NUMBER = "98xxxxxxxx";
+
+module.exports = {
+    AMAZON_URL,
+    FLIPKART_URL,
+    COUNTRY_CODE,
+    DESIRED_PRICE,
+    PHONE_NUMBER,
+    CHECK_FOR,
+    EMAIL,
+    CHECK_INTERVAL
+}
