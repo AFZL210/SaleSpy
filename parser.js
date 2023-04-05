@@ -1,5 +1,6 @@
-import axios from "axios";
-import  cheerio  from "cheerio";
+const axios = require("axios");
+const cheerio = require("cheerio");
+const { AMAZON_URL, FLIPKART_URL, DESIRED_PRICE, EMAIL, CHECK_FOR, CHECK_INTERVAL, PHONE_NUMBER } = require("./test_config")
 
 const amazonInfo = {
     name : '',
@@ -15,7 +16,7 @@ const flipkartInfo = {
 
 
 const amazonParser = async () => {
-        const { data } = await axios.get(""); 
+        const { data } = await axios.get(AMAZON_URL); 
         const $ = cheerio.load(data);
         const item = $('div.a-section');
         const titleBox = $('div#titleSection')
@@ -26,7 +27,7 @@ const amazonParser = async () => {
         const price = $(item).find("span.a-price-whole")
         .first().text().replace(/[,.]/g, '');
 
-        if(price <= 1000000) {
+        if(price <= DESIRED_PRICE) {
             console.log("BUY NOW")
             clearInterval(amazonHandle)
         }
@@ -34,4 +35,4 @@ const amazonParser = async () => {
         amazonInfo.price = parseInt(price);
 }
 
-const amazonHandle = setInterval(amazonParser, 1000);
+const amazonHandle = setInterval(amazonParser, CHECK_INTERVAL);
