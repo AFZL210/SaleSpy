@@ -14,6 +14,8 @@ const flipkartInfo = {
     price : ''
 };
 
+// url = "https://www.amazon.in/GIGABYTE-WINDFORCE-pci_e_x16-Graphics-GV-N3060WF2OC-12GD/dp/B0BNP2CMXM/"
+
 
 const amazonParser = async () => {
         const { data } = await axios.get(AMAZON_URL); 
