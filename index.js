@@ -1,17 +1,10 @@
 import inquirer from 'inquirer';
 import axios from 'axios';
 import cheerio from 'cheerio';
+
 let amazonHandle;
 
-const amazonInfo = {
-    name : '',
-    link : '',
-    price : ''
-};
-
-
-
-const productInfo = {
+let productInfo = {
     AMAZON_URL : "",
     PRODUCT_NAME : "",
     REMINDER_MSG : "Buy Now!",
@@ -93,7 +86,7 @@ const takeUserInput = (productInfo) => {
         productInfo.COUNTRY_CODE = answers.country_code;
         productInfo.CHECK_INTERVAL = answers.check_interval;
         productInfo.MOBILE_NUMBER = answers.mobile_number;
-        console.log(productInfo.AMAZON_URL)
+        console.log(productInfo.AMAZON_URL);
         amazonHandle = setInterval(() => amazonParser(productInfo), productInfo.CHECK_INTERVAL);
     });
 }
