@@ -12,11 +12,13 @@ const twilioInfo = {
 const messenger = twilio(twilioInfo.SID, twilioInfo.AUTH_TOKEN);
 
 const sendAlert = (twilioInfo, info) => {
+    const alertMessage = `Amazon Alert!! ${info.REMINDER_MSG} (${info.AMAZON_URL})(${info.PRODUCT_NAME}) is available under ${info.DESIRED_PRICE}`
+
     messenger.messages
         .create({
             from: twilioInfo.TWILIO_NUMBER,
             to: info.MOBILE_NUMBER,
-            body: info.REMINDER_MSG,
+            body: alertMessage,
         })
         .then((res) => {
             console.log(res.body);
@@ -32,8 +34,7 @@ let productInfo = {
     DESIRED_PRICE: 0,
     COUNTRY_CODE: "",
     MOBILE_NUMBER: "",
-    EMAIL: "abc@xyz.com",
-    CHECK_INTERVAL: "10000",
+    CHECK_INTERVAL: "1",
     PRICE: 0,
 };
 
@@ -61,13 +62,8 @@ const questions = [
     },
     {
         type: "input",
-        name: "email",
-        message: "Enter Email :",
-    },
-    {
-        type: "input",
         name: "check_interval",
-        message: "Enter Check Interval in (ms) :",
+        message: "Enter Check Interval in (minutes) :",
     },
 ];
 
@@ -106,7 +102,7 @@ const takeUserInput = (productInfo) => {
         productInfo.REMINDER_MSG = answers.reminder_msg;
         productInfo.DESIRED_PRICE = answers.desired_price;
         productInfo.EMAIL = answers.email;
-        productInfo.CHECK_INTERVAL = answers.check_interval;
+        productInfo.CHECK_INTERVAL = parseInt((answers.check_interval)*60000);
         productInfo.MOBILE_NUMBER = answers.mobile_number;
 
         amazonHandle = setInterval(
