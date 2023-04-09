@@ -4,9 +4,9 @@ import cheerio from "cheerio";
 import twilio from "twilio";
 
 const twilioInfo = {
-    TWILIO_NUMBER: "+15074738981",
-    SID: "AC13b7ec2905bb3ad84f55ee4df154c9ae",
-    AUTH_TOKEN: "4a3be840af99061effc9c2a479a88ac7",
+    TWILIO_NUMBER: "",
+    SID: "",
+    AUTH_TOKEN: "",
 };
 
 const messenger = twilio(twilioInfo.SID, twilioInfo.AUTH_TOKEN);
