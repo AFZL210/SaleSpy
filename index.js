@@ -58,7 +58,7 @@ const questions = [
     {
         type: "input",
         name: "mobile_number",
-        message: "Enter Mobile Number :",
+        message: "Enter Mobile Number with country code (+91xx) :",
     },
     {
         type: "input",
