@@ -13,6 +13,12 @@ clone the `SaleSpy` repo
   cd SaleSpy
 ```
 
+install dependencies
+
+```bash
+  npm install
+```
+
 update `twilio credentials` in `index.js` file
 
 ![1](https://user-images.githubusercontent.com/79896602/231786259-5fae98ce-1e3d-4954-af42-3daf518c1093.png)
