@@ -1,9 +1,30 @@
+
 # SaleSpy
+
 A notification bot that watches product prices and alerts users of any drops
 
-replace the twilio credentials in `index.js` with yours
 
-![Capture](https://user-images.githubusercontent.com/79896602/230763674-d5e99412-5117-404f-bfcd-a212416fe382.PNG)
+## Installation
+
+clone the `SaleSpy` repo
+
+```bash
+  git clone https://github.com/AFZL210/SaleSpy.git
+  cd SaleSpy
+```
+
+update `twilio credentials` in `index.js` file
+
+![1](https://user-images.githubusercontent.com/79896602/231786259-5fae98ce-1e3d-4954-af42-3daf518c1093.png)
+
+run `index.js`
+
+```bash
+  node index.js
+```
+## Screenshots
+
+![2](https://user-images.githubusercontent.com/79896602/231786252-bab73ac5-e5b3-4f74-b082-1096f0c673bb.jpg)
 
 
-![1681030637971](https://user-images.githubusercontent.com/79896602/230763654-7b3d8df5-9394-4732-a072-1901b42dbb70.jpg)
+
